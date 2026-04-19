@@ -1,4 +1,4 @@
-cat modelconfig.yaml 
+
 apiVersion: kagent.dev/v1alpha2
 kind: ModelConfig
 metadata:
