@@ -1,0 +1,21 @@
+cat modelconfig.yaml 
+apiVersion: kagent.dev/v1alpha2
+kind: ModelConfig
+metadata:
+  name: default-model-config
+  namespace: kagent
+  labels:
+    app.kubernetes.io/managed-by: Helm
+  annotations:
+    meta.helm.sh/release-name: kagent
+    meta.helm.sh/release-namespace: kagent
+spec:
+  # TODO: Fill in the name of the secret you created (kagent-openai)
+  apiKeySecret: "kagent-openai"
+  # TODO: Fill in the key name from the secret (OPENAI_API_KEY)
+  apiKeySecretKey: "OPENAI_API_KEY"
+  model: "openai/gpt-4.1-mini"
+  provider: OpenAI
+  openAI:
+    # TODO: Fill in the base URL from $OPENAI_API_BASE environment variable
+    baseUrl: ""    
